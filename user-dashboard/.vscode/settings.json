@@ -1,2 +1,4 @@
 {
+    "standard.autoFixOnSave": true,
+    "eslint.autoFixOnSave": true
 }
