@@ -1,17 +1,21 @@
 import dva from 'dva';
+import './index.html';
 import './index.css';
+import usersModel from './models/users.js'
 
 // 1. Initialize
 const app = dva();
+
+app.model(usersModel);
 
 // 2. Plugins
 // app.use({});
 
 // 3. Model
-// app.model(require('./models/example').default);
+// app.model(require('./models/example'));
 
 // 4. Router
-app.router(require('./router').default);
+app.router(require('./router').default)
 
 // 5. Start
-app.start('#root');
+app.start('#root')
