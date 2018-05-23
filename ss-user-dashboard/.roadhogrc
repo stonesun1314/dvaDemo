@@ -21,5 +21,5 @@
       "changeOrigin": true,
       "pathRewrite": { "^/api" : "" }
     }
-  },
+  }
 }
