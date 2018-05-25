@@ -7,12 +7,16 @@ import { PAGE_SIZE } from '../../constants';
 
 function Users({ dispatch, list: dataSource, loading, total, page: current }) {
   function deleteHandler(id) {
-    console.warn(`TODO:${id}`);
+    // console.warn(`TODO:${id}`);
+    dispatch({
+      type: 'users/remove',   // 调用的services还是modes的users
+      payload: id,
+    });
   }
 
-  function pageChangeHandler(page) {
-    dispatch(routerRedux.push({   //
-      pathname: '/users',
+  function pageChangeHandler(page) {    // 这里的作用
+    dispatch(routerRedux.push({
+      pathname: '/users',       // path的作用
       query: { page },
     }));
   }

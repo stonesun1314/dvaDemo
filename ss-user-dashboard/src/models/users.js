@@ -24,6 +24,15 @@ export default {
         },
       });
     },
+    *remove({ payload: id }, { call, put, select }) {
+      console.log('111');
+      yield call(usersService.remove, id);
+      console.log('222');
+      const page = yield select(state => state.users.page);
+      console.log('333');
+
+      yield put({ type: 'fetch', payload: { page } });   // fetch是services的fetch还是models/users的fetch
+    },
   },
   subscriptions: {
     setup({ dispatch, history }) {
